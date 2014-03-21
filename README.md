@@ -30,11 +30,11 @@ Mark Spieth has contributed a progressively improved series of "fixscripts" for 
 
 Usage:
 =============
-	generate a "fixed" LKM from original	-	./lkm_fixscript old_lkm.ko new_lkm.ko
-	test "fixed" LKM`s dependencies errors	-	depmod -e new_lkm.ko
-	insert "fixed "LKM simply, non-forced	-	insmod new_lkm.ko
+	1. generate a "fixed" LKM from original LKM	-	./lkm_fixscript old_lkm.ko new_lkm.ko
+	2. test "fixed" LKM`s dependencies errors	-	depmod -e new_lkm.ko
+	3. insert "fixed "LKM simply, non-forced	-	insmod new_lkm.ko
 
 References:
 =============
-[1] Code based on fixscript and fixscript2, authored by Mark Spieth <mark@digivation.com.au>, http://www.digivation.com.au/linmodem/
-[2] http://www.tldp.org/HOWTO/text/Linmodem-HOWTO
+* [1] Code based on fixscript and fixscript2, authored by Mark Spieth <mark@digivation.com.au>, http://www.digivation.com.au/linmodem/
+* [2] http://www.tldp.org/HOWTO/text/Linmodem-HOWTO
