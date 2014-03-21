@@ -9,7 +9,7 @@ if [ "$1" == "" ] || [ "$2" == "" ]; then
 	echo "	generate a "fixed" LKM from original	-	$0 old_lkm.ko new_lkm.ko";
 	echo "	test "fixed" LKMs dependencies errors	-	depmod -e new_lkm.ko";
 	echo "	insert "fixed "LKM simply, non-forced	-	insmod new_lkm.ko";
-	#exit 1;
+	exit 1;
 fi
 
 tmp=./modinfo.tmp
