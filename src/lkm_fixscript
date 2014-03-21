@@ -46,17 +46,22 @@ echo -ne `objdump -s -j .modinfo $1 |
 #depmod=depmod
 #$depmod -e $1 $OTHERMODULES 2>&1 | sed 's/depmod://g' | grep -vE "^$1:|Unresolved symbols|^#|:$"
 #$depmod -e $1 2>&1 | sed 's/depmod://g' | grep -vE "^$1:|Unresolved symbols|^#"
-objcopy="objcopy"
+#objcopy="objcopy"
 
 #fix symbols
 #CMD="$CMD --redefine-sym=register_serial=register_lucent"
 
 #replace the modinfo section with the new one
-objcopy="$objcopy --remove-section=.modinfo --add-section=.modinfo=$tmp"
-objcopy="$objcopy $*"
+#objcopy="$objcopy --remove-section=.modinfo --add-section=.modinfo=$tmp"
+#objcopy="$objcopy $*"
 
 #run the command
-$objcopy
+#$objcopy
+
+objcopy --add-section=.modinf1=$tmp $1 $2
+objcopy --rename-section .modinfo=.modinf2 $2 $2
+objcopy --rename-section .modinf1=.modinfo $2 $2
+#objcopy --remove-section=.modinf2 $2 $2
 
 #remove the section file
 rm -f $tmp
