@@ -31,7 +31,7 @@ Mark Spieth has contributed a progressively improved series of "fixscripts" for 
 Usage:
 =============
 	1. generate a "fixed" LKM from original LKM	-	./lkm_fixscript old_lkm.ko new_lkm.ko
-	2. insert "fixed "LKM simply, non-forced	-	insmod new_lkm.ko
+	2. insert "fixed" LKM simply, non-forced	-	insmod new_lkm.ko
 
 References:
 =============
